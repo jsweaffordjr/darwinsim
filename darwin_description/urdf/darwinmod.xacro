@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<robot name="darwinOP" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="gazebo_pressure" params="prefix parent num x y z">
+    <link name="${prefix}_foot_sensor_m${num}" >
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.01" />
+      <inertia
+        ixx="0.000"
+        ixy="0.000"
+        ixz="0.000"
+        iyy="0.000"
+        iyz="0.000"
+        izz="0.000" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.025 0.025 0.002"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.025 0.025 0.002"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint 
+    name="${prefix}_foot_sensor_m${num}_j"
+    type="revolute">
+    <origin
+      xyz="${x} ${y} ${z}"
+      rpy="0 0 0" />
+    <parent
+      link="${parent}" />
+    <child
+      link="${prefix}_foot_sensor_m${num}" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="0" velocity="0" lower="-0.001" upper="0.001" />
+  </joint>
+  
+  <gazebo reference="${prefix}_foot_sensor_m${num}_j">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+      <always_on>true</always_on>
+      <updateRate>100.0</updateRate>
+      <topicName>/leap_one/${prefix}_foot_sensor_m${num}</topicName>
+      <jointName>${prefix}_foot_sensor_m${num}_j</jointName>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="${prefix}_foot_sensor_m${num}">
+        <material>Gazebo/Blue</material>
+        <mu1>9000</mu1>
+        <mu2>9000</mu2>
+        <kp>1000000.0</kp>
+        <kd>10.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxContacts>100</maxContacts>
+    </gazebo>
+
+  </xacro:macro>
+
+  <xacro:gazebo_pressure prefix="left"  parent="left_m6" num="0" x="-0.03" y="-0.03" z="-0.034" />
+  <xacro:gazebo_pressure prefix="left"  parent="left_m6" num="1" x="0.03" y="-0.03" z="-0.034" />
+  <xacro:gazebo_pressure prefix="left"  parent="left_m6" num="2" x="-0.03" y="0.03" z="-0.034" />
+  <xacro:gazebo_pressure prefix="left"  parent="left_m6" num="3" x="0.03" y="0.03" z="-0.034" />
+
+  <xacro:gazebo_pressure prefix="right"  parent="right_m6" num="0" x="-0.03" y="-0.03" z="-0.034" />
+  <xacro:gazebo_pressure prefix="right"  parent="right_m6" num="1" x="0.03" y="-0.03" z="-0.034" />
+  <xacro:gazebo_pressure prefix="right"  parent="right_m6" num="2" x="-0.03" y="0.03" z="-0.034" />
+  <xacro:gazebo_pressure prefix="right"  parent="right_m6" num="3" x="0.03" y="0.03" z="-0.034" />
+
+</robot>
+
