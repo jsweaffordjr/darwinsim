@@ -10,7 +10,7 @@ from geometry_msgs.msg import Twist
 class WJFunc:
     """
     Walk Joint Function CPG style
-    Provides parameterized sine wave functions as y=offset+scale*(in_offset+in_scale*x)
+    Provides parameterized sine wave functions as y=offset+scale*sin(in_offset+in_scale*x)
     """
     def __init__(self):
         self.offset=0
@@ -227,6 +227,7 @@ class Walker:
 
         self.velocity=[0,0,0]
         self.walking=False
+	self.emergencystop=False
         self.func=WFunc()
 
         #~ self.ready_pos=get_walk_angles(10)
@@ -245,9 +246,13 @@ class Walker:
         vx=msg.linear.x
         vy=msg.linear.y
         vt=msg.angular.z
+	vs=msg.linear.z
+	if vs==10:
+	    self.emergencystop=True
         self.start()
         self.set_velocity(vx,vy,vt)
         
+
     def init_walk(self):
         """
         If not there yet, go to initial walk position
@@ -290,7 +295,7 @@ class Walker:
         p=True
         i=0
         self.current_velocity=[0,0,0]
-        while not rospy.is_shutdown() and (self.walking or i<n or self.is_walking()):
+        while not rospy.is_shutdown() and (self.walking or i<n or self.is_walking()) and not self.emergencystop:
             if not self.walking:
                 self.velocity=[0,0,0]
             if not self.is_walking() and i==0: # Do not move if nothing to do and already at 0
@@ -307,7 +312,7 @@ class Walker:
                 p=not p
             r.sleep()
         rospy.loginfo("Finished walking thread")
-        
+		
         self._th_walk=None
 
     def is_walking(self):

@@ -24,8 +24,8 @@
         <!--box size="0.102 0.109 0.106" /-->
         <mesh filename="package://darwin_description/meshes/body.STL"  scale="1 1 1"/>
       </geometry>
-      <material name="Black">
-        <color rgba="0.10 0.10 0.10 1.0"/>
+      <material name="Grey">
+        <color rgba="0.20 0.20 0.20 1.0"/>
       </material>
     </visual>
     <collision>
@@ -1266,8 +1266,8 @@
 
 <gazebo reference="MP_BODY">
     
-    <selfCollide>true</selfCollide>
-    <material>Gazebo/Black</material>
+    <selfCollide>false</selfCollide>
+    <material>Gazebo/Grey</material>
     
   </gazebo>
 
@@ -1275,7 +1275,7 @@
 
 <gazebo reference="MP_NECK">
     
-    <selfCollide>true</selfCollide> 
+    <selfCollide>false</selfCollide> 
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1284,7 +1284,7 @@
 
 <gazebo reference="MP_HEAD">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Orange</material>
     
   </gazebo>
@@ -1293,7 +1293,7 @@
 
 <gazebo reference="MP_BACK_L">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1302,7 +1302,7 @@
 
 <gazebo reference="MP_SHOULDER_L">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Orange</material>
     
   </gazebo>
@@ -1311,7 +1311,7 @@
 
 <gazebo reference="MP_ARM_HIGH_L">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1320,7 +1320,7 @@
 
 <gazebo reference="MP_ARM_LOW_L">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1329,7 +1329,7 @@
 
 <gazebo reference="MP_ARM_GRIPPER_FIX_L">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1338,7 +1338,7 @@
 
 <gazebo reference="MP_ARM_GRIPPER_FIX_DUMMY_L">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1347,7 +1347,7 @@
 
 <gazebo reference="MP_ARM_GRIPPER_MOV_L">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1356,7 +1356,7 @@
 
 <gazebo reference="MP_BACK_R">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1365,7 +1365,7 @@
 
 <gazebo reference="MP_SHOULDER_R">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Orange</material>
     
   </gazebo>
@@ -1374,7 +1374,7 @@
 
 <gazebo reference="MP_ARM_HIGH_R">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1383,7 +1383,7 @@
 
 <gazebo reference="MP_ARM_LOW_R">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1392,7 +1392,7 @@
 
 <gazebo reference="MP_ARM_GRIPPER_FIX_R">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1401,7 +1401,7 @@
 
 <gazebo reference="MP_ARM_GRIPPER_FIX_DUMMY_R">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1410,7 +1410,7 @@
 
 <gazebo reference="MP_ARM_GRIPPER_MOV_R">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1419,7 +1419,7 @@
 
 <gazebo reference="MP_PELVIS_L">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Orange</material>
     
   </gazebo>
@@ -1428,7 +1428,7 @@
 
 <gazebo reference="MP_THIGH1_L">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1437,7 +1437,7 @@
 
 <gazebo reference="MP_THIGH2_L">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1446,7 +1446,7 @@
 
 <gazebo reference="MP_TIBIA_L">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1455,7 +1455,7 @@
 
 <gazebo reference="MP_ANKLE1_L">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1464,7 +1464,7 @@
 
 <gazebo reference="MP_ANKLE2_L">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Orange</material>    
 
     <mu1>9000</mu1>
@@ -1479,7 +1479,7 @@
 
 <gazebo reference="MP_PELVIS_R">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Orange</material>
     
   </gazebo>
@@ -1488,7 +1488,7 @@
 
 <gazebo reference="MP_THIGH1_R">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1497,7 +1497,7 @@
 
 <gazebo reference="MP_THIGH2_R">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1506,7 +1506,7 @@
 
 <gazebo reference="MP_TIBIA_R">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1515,7 +1515,7 @@
 
 <gazebo reference="MP_ANKLE1_R">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1524,7 +1524,7 @@
 
 <gazebo reference="MP_ANKLE2_R">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Orange</material>
     
 
@@ -1540,7 +1540,7 @@
 
 <gazebo reference="MP_PMDCAMBOARD">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>
@@ -1549,7 +1549,7 @@
 
 <gazebo reference="">
     
-    <selfCollide>true</selfCollide>
+    <selfCollide>false</selfCollide>
     <material>Gazebo/Grey</material>
     
   </gazebo>

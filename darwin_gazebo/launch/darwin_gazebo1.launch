@@ -3,7 +3,7 @@
    <param name="robot_description" textfile="$(find darwin_description)/urdf/darwin.urdf" />  
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="worlds/empty.world"/>
+    <arg name="world_name" value="worlds/darwin1.world"/>
     <arg name="paused" value="true"/>
     <arg name="use_sim_time" value="true"/>
     
